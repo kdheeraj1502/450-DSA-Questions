@@ -3,10 +3,31 @@ package backtracking;
 public class sudoku {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int grid[][] = { { 3, 0, 6, 5, 0, 8, 4, 0, 0 }, { 5, 2, 0, 0, 0, 0, 0, 0, 0 }, { 0, 8, 7, 0, 0, 0, 0, 3, 1 },
-				{ 0, 0, 3, 0, 1, 0, 0, 8, 0 }, { 9, 0, 0, 8, 6, 3, 0, 0, 5 }, { 0, 5, 0, 0, 9, 0, 6, 0, 0 },
-				{ 1, 3, 0, 0, 0, 0, 2, 5, 0 }, { 0, 0, 0, 0, 0, 0, 0, 7, 4 }, { 0, 0, 5, 2, 0, 6, 3, 0, 0 } };
+		
+		for(int i = 0; i < 9; i += 3) {
+			System.out.println("Row " + i);
+			System.out.println();
+			for(int j = 0; j < 9; j += 3) {
+				for(int k = i; k < i + 3; k++) {
+					for(int z = j; z < j + 3; z++) {
+						System.out.print(z + ", ");
+					}
+					System.out.println();
+				}
+			}
+		}
+		
+		
+		int grid[][] = { 
+				{ 3, 0, 6, 5, 0, 8, 4, 0, 0 }, 
+				{ 5, 2, 0, 0, 0, 0, 0, 0, 0 }, 
+				{ 0, 8, 7, 0, 0, 0, 0, 3, 1 },
+				{ 0, 0, 3, 0, 1, 0, 0, 8, 0 }, 
+				{ 9, 0, 0, 8, 6, 3, 0, 0, 5 }, 
+				{ 0, 5, 0, 0, 9, 0, 6, 0, 0 },
+				{ 1, 3, 0, 0, 0, 0, 2, 5, 0 }, 
+				{ 0, 0, 0, 0, 0, 0, 0, 7, 4 }, 
+				{ 0, 0, 5, 2, 0, 6, 3, 0, 0 } };
 
 		if (SolveSudoku(grid)) {
 			printGrid(grid);
@@ -50,14 +71,14 @@ public class sudoku {
 	}
 
 	private static boolean check(int[][] grid, int i, int j, int val) {
-		// column
+		// column is constant row is changing
 		for (int k = 0; k < grid.length; k++) {
 			if (grid[k][j] == val) {
 				return false;
 			}
 		}
 
-		// row
+		// row is constant col is changing
 		for (int k = 0; k < grid.length; k++) {
 			if (grid[i][k] == val) {
 				return false;

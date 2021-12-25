@@ -7,14 +7,14 @@ import java.util.HashSet;
 public class combinationsum {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int a[] = { 6, 5, 5, 7, 1, 8, 2, 9, 9, 7, 7, 9 };
-		int sum = 6;
+		int a[] = { 8, 1, 8, 6, 8 };
+		int sum = 12;
+
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		for (int i = 0; i < a.length; i++) {
 			arr.add(a[i]);
 		}
-		HashSet<Integer> hs = new HashSet<Integer>(arr);
+		HashSet<Integer> hs = new HashSet<>(arr);
 		arr = new ArrayList<Integer>(hs);
 		Collections.sort(arr);
 		ArrayList<ArrayList<Integer>> fans = new ArrayList<ArrayList<Integer>>();
@@ -35,6 +35,12 @@ public class combinationsum {
 //			fans.add(ans);
 			return;
 		}
+
+//		for (int i = 0; i < arr.size(); i++) {
+//			ans.add(arr.get(i));
+//			solve(arr, sum - arr.get(i), fans, ans, i);
+//			ans.remove(ans.size() - 1);
+//		}
 
 		for (int i = lastcoinused; i < arr.size(); i++) {
 			ans.add(arr.get(i));

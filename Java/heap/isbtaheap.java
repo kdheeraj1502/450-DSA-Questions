@@ -1,26 +1,44 @@
 package heap;
 
-import binnarytree.treefromstring;
-import binnarytree.treefromstring.BinaryTree;
-
 public class isbtaheap {
+	
+	private Node root = null;
+	
+	static class Node {
+		public int data;
+		public Node left;
+		public Node right;
+
+		Node(int data) {
+			this.data = data;
+		}
+
+		Node(int data, Node left, Node right) {
+			this.data = data;
+			this.left = left;
+			this.right = right;
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		treefromstring m = new treefromstring();
-		BinaryTree tree = m.new BinaryTree("5(2)(3)");
-		tree.display();
+	//	treefromstring m = new treefromstring();
+	//	BinaryTree tree = m.new BinaryTree("5(2)(3)");
+	//	tree.display();
+		isbtaheap i = new isbtaheap();
 		System.out.println();
 
-		System.out.println(isHeap(tree.root));
+		System.out.println(isHeap(i.root));
 	}
 
-	public static boolean isHeap(binnarytree.treefromstring.BinaryTree.Node root) {
+	public static boolean isHeap(Node root) {
 
 		return (isHeapmax(root) && iscomplete(root, noofnodes(root), 0));
 
 	}
 
-	public static boolean isHeapmax(binnarytree.treefromstring.BinaryTree.Node root) {
+	public static boolean isHeapmax(Node root) {
 		if (root == null) {
 			return true;
 		}
@@ -37,7 +55,7 @@ public class isbtaheap {
 
 	}
 
-	public static int noofnodes(binnarytree.treefromstring.BinaryTree.Node root) {
+	public static int noofnodes(Node root) {
 		if (root == null) {
 			return 0;
 		}
@@ -45,7 +63,7 @@ public class isbtaheap {
 		return (1 + noofnodes(root.left) + noofnodes(root.right));
 	}
 
-	public static boolean iscomplete(binnarytree.treefromstring.BinaryTree.Node root, int totalnodes, int index) {
+	public static boolean iscomplete(Node root, int totalnodes, int index) {
 		if (root == null) {
 			return true;
 		}

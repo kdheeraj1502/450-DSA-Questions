@@ -106,9 +106,11 @@ public class tosumtree {
 
 			int left = tosumtree(parent.left);
 			int right = tosumtree(parent.right);
-			int temp = parent.data;
+			int temp = parent.data; // old
 			parent.data = left + right;
 			return parent.data + temp;
+			
+			/// left + right + old
 		}
 
 	}

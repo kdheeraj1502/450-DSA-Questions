@@ -1,7 +1,6 @@
 package binnarytree;
 
-import java.util.Scanner;
-
+import java.util.*;
 public class mirror {
 	public class BinaryTree {
 
@@ -90,14 +89,7 @@ public class mirror {
 		}
 
 		public int height(Node root) {
-			if (root == null) {
-				return -1;
-			}
-
-			int left = height(root.left);
-			int right = height(root.right);
-
-			return Math.max(left, right) + 1;
+			return root != null ? Math.max(height(root.left), height(root.right)) + 1 : 0;
 
 		}
 
@@ -115,6 +107,22 @@ public class mirror {
 			node.right = mirror(parent.left);
 
 			return node;
+		}
+		
+		private Node mirror_self(Node parent) {
+			Queue<Node> queue = new LinkedList<>();
+			queue.add(parent);
+			while(!queue.isEmpty()) {
+				Node temp = queue.remove();
+				if(temp != null) {
+					Node temp1 = temp.left;
+					temp.left = temp.right;
+					temp.right = temp1;
+					queue.add(temp.left);
+					queue.add(temp.right);
+				}
+			}
+			return parent;
 		}
 
 	}

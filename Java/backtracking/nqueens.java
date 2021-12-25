@@ -7,15 +7,16 @@ public class nqueens {
 		int[][] arr = new int[4][4];
 		print(arr, 3, 0, 0, "");
 
-		int n = 4;
-		int[] col = new int[n];
-		int[] d1 = new int[2 * n];
-		int[] d2 = new int[2 * n];
+//		int n = 4;
+//		int[] col = new int[n];
+//		int[] d1 = new int[2 * n];
+//		int[] d2 = new int[2 * n];
 //		printopti(n, 0, "", col, d1, d2);
 
 	}
 
 	public static void print(int[][] arr, int tq, int qp, int i, String ans) {
+		// tq = total queen
 		if (qp == tq) {
 			System.out.println(ans);
 			return;

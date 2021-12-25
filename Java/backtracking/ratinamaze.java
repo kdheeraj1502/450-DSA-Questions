@@ -6,8 +6,8 @@ import java.util.Collections;
 public class ratinamaze {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int maze[][] = { { 1, 0, 0, 0 }, { 1, 1, 0, 1 }, { 1, 1, 0, 0 }, { 0, 1, 1, 1 } };
+		System.out.println(findPath(maze, maze.length));
 	}
 
 	public static ArrayList<String> findPath(int[][] m, int n) {

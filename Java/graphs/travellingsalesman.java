@@ -8,7 +8,6 @@ import graphs.makegraph.Graph;
 public class travellingsalesman {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 //		int[][] adj = { { 0, 20, 42, 25 }, { 20, 0, 30, 34 }, { 42, 30, 0, 10 }, { 25, 34, 10, 0 } };
 		HashMap<String, Boolean> map = new HashMap<>();
 		Graph graph = new Graph();

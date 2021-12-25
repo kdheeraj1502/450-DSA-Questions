@@ -2,6 +2,9 @@ package dp;
 
 import java.util.Arrays;
 
+// sort based on endtime
+// add default profit in 1 D array
+// caluclaute profit by 2 pointer i and j always keep j lower thn i
 public class weightedjobscheduling {
 
 	public static void main(String[] args) {
