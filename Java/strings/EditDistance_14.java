@@ -3,9 +3,8 @@ package strings;
 public class EditDistance_14 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-//		editdistance("abc", "bcd");
-		editdistance("abc", "abd");
+		editdistance("dbb", "fdfaccddfac");
+	//	editdistance("abc", "abd");
 
 	}
 
@@ -13,6 +12,7 @@ public class EditDistance_14 {
 
 		int m = s1.length();
 		int n = s2.length();
+		
 		int[][] dp = new int[s1.length() + 1][s2.length() + 1];
 
 		// filling first row

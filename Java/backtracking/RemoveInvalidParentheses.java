@@ -21,7 +21,7 @@ public class RemoveInvalidParentheses {
 	}
 
 	public static void main(String[] args) {
-		RemoveInvalidParentheses_1 rp = new RemoveInvalidParentheses_1();
+		RemoveInvalidParentheses rp = new RemoveInvalidParentheses();
 // 		String s = "())))()v(k";
 //		String s = "(a)())()";
 		String s = "()())()";
